@@ -23,7 +23,7 @@ follows (on a Mac):
 4.  Change to the git directory and clone the HPL repository:
 
         cd git
-        git clone git@github.com:williamdemeo/HPL.git
+        git clone git@github.com:HYAllStars/HPL.git
 
 You will now have a directory called ~/git/HPL, where the files in the HPL
 repository are stored.  You can modify these files and then check them back 
