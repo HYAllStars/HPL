@@ -67,13 +67,13 @@ def count_nucleotides(dna, nucleotide):
         if char in nucleotide:
             occurrence = occurrence + 1
 
-    print(occurrence)
+    # print(occurrence)
     
     '''Comments: I think your code is essentially correct.
     However, they want you to return (not print) the count.
     '''
     # wjd's suggested mod
-    # return occurrence
+    return occurrence
 
 
 def contains_sequence(dna1, dna2):
@@ -145,8 +145,8 @@ def insert_sequence(dna1, dna2, index):
     'CA'
     """
     # hy's original code:
-    sequence = dna1[:index] + dna2 + dna1[index:]
-    print(sequence)
+    # sequence = dna1[:index] + dna2 + dna1[index:]
+    # print(sequence)
     
     '''Comments: looks great!
 
@@ -154,9 +154,8 @@ def insert_sequence(dna1, dna2, index):
     want you to return the answer, don't print it.
 
     Try this instead:
-
-        return dna1[:index] + dna2 + dna1[index:]
     '''
+    return dna1[:index] + dna2 + dna1[index:]
     
 
 def get_complement(nct):
@@ -169,7 +168,8 @@ def get_complement(nct):
     >>> get_complement('T')
     'A'
     """
-    # hy's original code:
+
+    '''hy's original code:
     complement = ''
     if nct == 'A':
         complement == complement + 'T'
@@ -181,6 +181,7 @@ def get_complement(nct):
         complement == complement + 'A'
 
     print(complement)
+    '''
 
         
     '''Comments: good start!
@@ -192,16 +193,15 @@ def get_complement(nct):
         2. you use double equals instead of assignment.
 
     Here's how I would rewrite the function:
-
-        if nct == 'A':
-            return 'T'
-        if nct == 'G':
-            return 'C'
-        if nct == 'C':
-            return 'G'
-        if nct == 'T':
-            return 'A'
     '''
+    if nct == 'A':
+        return 'T'
+    if nct == 'G':
+        return 'C'
+    if nct == 'C':
+        return 'G'
+    if nct == 'T':
+        return 'A'
 
 
 ''' TEST CODE '''
@@ -213,12 +213,34 @@ def get_complement(nct):
     >>> get_length('ATCG')
     4
 '''
+print "\n---- Test 1 ----"
+print "    get_length('ATCGAT') returns:", get_length('ATCGAT')
+if not get_length('ATCGAT')==6:
+    print "    >>>> FAILED TEST 1 <<<<"
+
+print "    get_length('ATCG') returns:", get_length('ATCG')
+if not get_length('ATCG')==4:
+    print "    >>>> FAILED TEST 1 <<<<"
+
+
 ''' Test 2:
     >>> is_longer('ATCG', 'AT')
     True
     >>> is_longer('ATCG', 'ATCGGA')
     False
 '''
+print "\n---- Test 2 ----"
+print "    is_longer('ATCG', 'AT') returns:", is_longer('ATCG', 'AT')
+if not is_longer('ATCG', 'AT'):
+    print "    >>>> FAILED TEST 2 <<<<"
+print "    is_longer('ATCG', 'ATCGGA') returns:", is_longer('ATCG', 'ATCGGA')
+if is_longer('ATCG', 'ATCGGA'):
+    print "    >>>> FAILED TEST 2 <<<<"
+
+print "    get_length('ATCG') returns:", get_length('ATCG'), 
+if not get_length('ATCG')==4:
+    print "    >>>> FAILED TEST 1 <<<<"
+
 
 ''' Test 3:
     >>> count_nucleotides('ATCGGC', 'G')
@@ -226,6 +248,13 @@ def get_complement(nct):
     >>> count_nucleotides('ATCTA', 'G')
     0
 '''
+print "\n---- Test 3 ----"
+print "    count_nucleotides('ATCGGC', 'G') returns:", count_nucleotides('ATCGGC', 'G')
+if not count_nucleotides('ATCGGC', 'G')==2:
+    print "    >>>> FAILED TEST 3 <<<<"
+print "    count_nucleotides('ATCTA', 'G') returns:", count_nucleotides('ATCTA', 'G')
+if not count_nucleotides('ATCTA', 'G')==0:
+    print "    >>>> FAILED TEST 3 <<<<"
 
 
 ''' Test 4:
@@ -234,6 +263,13 @@ def get_complement(nct):
     >>> contains_sequence('ATCGGC', 'GT')
     False
 '''
+print "\n---- Test 4 ----"
+print "    contains_sequence('ATCGGC', 'GG') returns:", contains_sequence('ATCGGC', 'GG')
+if not contains_sequence('ATCGGC', 'GG'):
+    print "    >>>> FAILED TEST 4 <<<<"
+print "    contains_sequence('ATCGGC', 'GT') returns:", contains_sequence('ATCGGC', 'GT')
+if contains_sequence('ATCGGC', 'GG'):
+    print "    >>>> FAILED TEST 4 <<<<"
 
 
 ''' Test 5:
@@ -246,6 +282,19 @@ def get_complement(nct):
     >>> is_valid_sequence('ABC')
     False
 '''
+print "\n---- Test 5 ----"
+print "    is_valid_sequence('ACGTACG') returns:", is_valid_sequence('ACGTACG')
+if not is_valid_sequence('ACGTACG'):
+    print "    >>>> FAILED TEST 5 <<<<"
+print "    is_valid_sequence('AAA') returns:", is_valid_sequence('AAA')
+if not is_valid_sequence('AAA'):
+    print "    >>>> FAILED TEST 5 <<<<"
+print "    is_valid_sequence('TTTTTTT') returns:", is_valid_sequence('TTTTTTT')
+if not is_valid_sequence('TTTTTTT'):
+    print "    >>>> FAILED TEST 5 <<<<"
+print "    is_valid_sequence('ABC') returns:", is_valid_sequence('ABC')
+if is_valid_sequence('ABC'):
+    print "    >>>> FAILED TEST 5 <<<<"
 
 ''' Test 6:
     >>> insert_sequence('CCGG', 'AT', 2)
@@ -257,7 +306,19 @@ def get_complement(nct):
     >>> insert_sequence('C', 'A', 1)
     'CA'
 '''
-
+print "\n---- Test 6 ----"
+print "    insert_sequence('CCGG', 'AT', 2) returns:", insert_sequence('CCGG', 'AT', 2)
+if not insert_sequence('CCGG', 'AT', 2)=='CCATGG':
+    print "    >>>> FAILED TEST 6 <<<<"
+print "    insert_sequence('TAGA', 'C', 3) returns:", insert_sequence('TAGA', 'C', 3)
+if not insert_sequence('TAGA', 'C', 3)=='TAGCA':
+    print "    >>>> FAILED TEST 6 <<<<"
+print "    insert_sequence('AA', 'TGCC', 0) returns:", insert_sequence('AA', 'TGCC', 0)
+if not insert_sequence('AA', 'TGCC', 0)=='TGCGAA':
+    print "    >>>> FAILED TEST 6 <<<<"
+print "    insert_sequence('C', 'A', 1) returns:", insert_sequence('C', 'A', 1)
+if not insert_sequence('C', 'A', 1)=='CA':
+    print "    >>>> FAILED TEST 6 <<<<"
 
 ''' Test 7:
     >>> get_complement('A')
@@ -267,28 +328,13 @@ def get_complement(nct):
     >>> get_complement('T')
     'A'
 '''
-
-
-'''
-# OLD TEST CODE
-e = ''
-s = 'ABCD'
-t = 'ABCDE'
-dnas = e,s,t
-for k in range(len(dnas)):
-    print "Test", k, ": get_length(", dnas[k], ") returns:", get_length(dnas[k])
-
-print "Test 3 : is_longer(", e, ",", s, ") returns:", is_longer(e,s)
-print "Test 4 : is_longer(", s, ",", e, ") returns:", is_longer(s,e)
-print "Test 5 : is_longer(", s, ",", t, ") returns:", is_longer(s,t)
-print "Test 6 : is_longer(", t, ",", s, ") returns:", is_longer(t,s)
-print
-print "Test 7 : contains_nucleotides(", e, ",'A') returns:", count_nucleotides(e,'A')
-print "Test 8 : contains_nucleotides(", s, ",'A') returns:", count_nucleotides(s,'A')
-print "Test 9 : contains_nucleotides(", t, ",'G') returns:", count_nucleotides(t,'G')
-print
-print "Test 10 : contains_sequence(", e, ",", s, ") returns:", contains_sequence(e,s)
-print "Test 11 : contains_sequence(", s, ",", e, ") returns:", contains_sequence(s,e)
-print "Test 12 : contains_sequence(", s, ",", t, ") returns:", contains_sequence(s,t)
-print "Test 13 : contains_sequence(", t, ",", s, ") returns:", contains_sequence(t,s)
-'''
+print "\n---- Test 7 ----"
+print "    get_complement('A') returns:", get_complement('A')
+if not get_complement('A')=='T':
+    print "    >>>> FAILED TEST 7 <<<<"
+print "    get_complement('C') returns:", get_complement('C')
+if not get_complement('C')=='G':
+    print "    >>>> FAILED TEST 7 <<<<"
+print "    get_complement('T') returns:", get_complement('T')
+if not get_complement('T')=='A':
+    print "    >>>> FAILED TEST 7 <<<<"
