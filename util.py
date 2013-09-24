@@ -237,7 +237,7 @@ print "    is_longer('ATCG', 'ATCGGA') returns:", is_longer('ATCG', 'ATCGGA')
 if is_longer('ATCG', 'ATCGGA'):
     print "    >>>> FAILED TEST 2 <<<<"
 
-print "    get_length('ATCG') returns:", get_length('ATCG'), 
+print "    get_length('ATCG') returns:", get_length('ATCG')
 if not get_length('ATCG')==4:
     print "    >>>> FAILED TEST 1 <<<<"
 
@@ -268,7 +268,7 @@ print "    contains_sequence('ATCGGC', 'GG') returns:", contains_sequence('ATCGG
 if not contains_sequence('ATCGGC', 'GG'):
     print "    >>>> FAILED TEST 4 <<<<"
 print "    contains_sequence('ATCGGC', 'GT') returns:", contains_sequence('ATCGGC', 'GT')
-if contains_sequence('ATCGGC', 'GG'):
+if contains_sequence('ATCGGC', 'GT'):
     print "    >>>> FAILED TEST 4 <<<<"
 
 
@@ -313,8 +313,8 @@ if not insert_sequence('CCGG', 'AT', 2)=='CCATGG':
 print "    insert_sequence('TAGA', 'C', 3) returns:", insert_sequence('TAGA', 'C', 3)
 if not insert_sequence('TAGA', 'C', 3)=='TAGCA':
     print "    >>>> FAILED TEST 6 <<<<"
-print "    insert_sequence('AA', 'TGCC', 0) returns:", insert_sequence('AA', 'TGCC', 0)
-if not insert_sequence('AA', 'TGCC', 0)=='TGCGAA':
+print "    insert_sequence('AA', 'TGCG', 0) returns:", insert_sequence('AA', 'TGCG', 0)
+if not insert_sequence('AA', 'TGCG', 0)=='TGCGAA':
     print "    >>>> FAILED TEST 6 <<<<"
 print "    insert_sequence('C', 'A', 1) returns:", insert_sequence('C', 'A', 1)
 if not insert_sequence('C', 'A', 1)=='CA':
