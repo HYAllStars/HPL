@@ -1,11 +1,9 @@
 HPL
 ===
-This is Hyeyoung's Python Library (HPL).
-
-It contains a sampling of Hyeyoung Shin's Python programs.
+Hyeyoung's Python Library (HPL) is a collection of Python programs by Hyeyoung Shin.
 
 The wjd_debug branch contains some comments, suggestions, and minor modifications 
-by William.  (These were merged into the master branch.)
+by William.  (These are usually merged into the master branch.)
 
 You can clone (i.e., import) the HPL repository onto your local computer as
 follows (on a Mac):
