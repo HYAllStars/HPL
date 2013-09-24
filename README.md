@@ -1,23 +1,39 @@
-This repository contains a collection of Hyeyoung's Python programs.
+HPL
+===
+This is Hyeyoung's Python Library (HPL).
 
-The wjd_debug branch contains comments and modifications made by William.
+It contains a sampling of Hyeyoung Shin's Python programs.
 
-You can clone this repository on your local machine with the following command:
+The wjd_debug branch contains some comments, suggestions, and minor modifications 
+by William.  (These were merged into the master branch.)
 
-    git clone git@github.com:williamdemeo/HPL.git
+You can clone (i.e., import) the HPL repository onto your local computer as
+follows (on a Mac):
 
-This will checkout the master branch.  
+1.  Open a terminal window.
 
-If you want to look at and/or modify the wjd_debug branch, first use the git 
-clone command above, and then do this:
+2.  Make sure you have the git program installed.  Type git --help at the command line.
+    If you get unexpected results, install git as described here:
 
-    git checkout wjd_debug
+    http://git-scm.com/book/en/Getting-Started-Installing-Git#Installing-on-Mac
 
-If you then want to merge the wjd_debug branch into the master branch, do this:
+3.  Create a directory on your computer called git, as follows:
 
-    git checkout master
-    git merge wjd_debug
+        cd              # (change to your come directory)
+        mkdir -p git    # (make a directory called git)
 
-Please let me know if you have any questions.  
+4.  Change to the git directory and clone the HPL repository:
 
-                              -William
+        cd git
+        git clone git@github.com:williamdemeo/HPL.git
+
+You will now have a directory called ~/git/HPL, where the files in the HPL
+repository are stored.  You can modify these files and then check them back 
+in with the command:
+
+    git commit -a -m "description of the changes you made"
+    git push origin master
+
+Please let me know if you have questions!
+
+-William
