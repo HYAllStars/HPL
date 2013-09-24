@@ -19,7 +19,7 @@ def get_length(dna):
     '''
 
     # wjd's suggestion:
-    return len(s)
+    return len(dna)
 
     '''Explanation: 
     I don't think they want you to print the number of letters from the set {A, G, C, T}.
