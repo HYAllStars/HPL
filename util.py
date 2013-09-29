@@ -295,6 +295,9 @@ if not is_valid_sequence('TTTTTTT'):
 print "    is_valid_sequence('ABC') returns:", is_valid_sequence('ABC')
 if is_valid_sequence('ABC'):
     print "    >>>> FAILED TEST 5 <<<<"
+print "    is_valid_sequence('ABBBBBB') returns:", is_valid_sequence('BBBBBBB')
+if is_valid_sequence('ABBBBBB'):
+    print "    >>>> FAILED TEST 5 <<<<"
 
 ''' Test 6:
     >>> insert_sequence('CCGG', 'AT', 2)
