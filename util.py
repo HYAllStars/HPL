@@ -111,14 +111,22 @@ def is_valid_sequence(dna):
     """
     # hy's original code:
     not_nucleotides = 'BDEFHIJKLMNOPQRSUVWXYZ'
+
+    # for char in not_nucleotides:
+    #     if char in dna:
+    #         return False
+    #     else:                 <<== Here is the bug
+    #         return True
+
+    # The following will work
     for char in not_nucleotides:
         if char in dna:
             return False
-        else:
-            return True
+
+    return True
 
 
-    '''Comments: looks great!
+    '''Comments:
     
     You could also do this:
 
