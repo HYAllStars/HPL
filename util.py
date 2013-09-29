@@ -283,21 +283,19 @@ if contains_sequence('ATCGGC', 'GT'):
     False
 '''
 print "\n---- Test 5 ----"
-print "    is_valid_sequence('ACGTACG') returns:", is_valid_sequence('ACGTACG')
-if not is_valid_sequence('ACGTACG'):
-    print "    >>>> FAILED TEST 5 <<<<"
-print "    is_valid_sequence('AAA') returns:", is_valid_sequence('AAA')
-if not is_valid_sequence('AAA'):
-    print "    >>>> FAILED TEST 5 <<<<"
-print "    is_valid_sequence('TTTTTTT') returns:", is_valid_sequence('TTTTTTT')
-if not is_valid_sequence('TTTTTTT'):
-    print "    >>>> FAILED TEST 5 <<<<"
-print "    is_valid_sequence('ABC') returns:", is_valid_sequence('ABC')
-if is_valid_sequence('ABC'):
-    print "    >>>> FAILED TEST 5 <<<<"
-print "    is_valid_sequence('ABBBBBB') returns:", is_valid_sequence('BBBBBBB')
-if is_valid_sequence('ABBBBBB'):
-    print "    >>>> FAILED TEST 5 <<<<"
+
+# Here are the cases we will test:
+cases = {0:'ACGTACG', 1:'AAA', 2:'TTTTTTT', 3:'ABC', 4:'ABBBBBB'}
+
+# Here are the correct answers in each case:
+answers = {0:True, 1:True, 2:True, 3:False, 4:False}
+
+# Test each case:
+for k in range(len(cases)):
+    print "    is_valid_sequence('", cases[k],"') returns:", is_valid_sequence(cases[k])
+    if not is_valid_sequence(cases[k])==answers[k]:
+        print "    >>>> FAILED TEST 5 on input:", cases[k]
+
 
 ''' Test 6:
     >>> insert_sequence('CCGG', 'AT', 2)
